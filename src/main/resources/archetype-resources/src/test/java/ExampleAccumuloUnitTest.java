@@ -19,6 +19,7 @@
  */
 package ${package};
 
+import org.apache.accumulo.core.client.security.tokens.PasswordToken;
 import org.apache.accumulo.test.MiniAccumuloCluster;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
@@ -48,7 +49,7 @@ public class ExampleAccumuloUnitTest {
 
   @Test(timeout = 30000)
   public void test() throws Exception {
-    AccumuloApp.run(accumulo.getInstanceName(), accumulo.getZooKeepers(), "superSecret", new String[0]);
+    AccumuloApp.run(accumulo.getInstanceName(), accumulo.getZooKeepers(), new PasswordToken("superSecret"), new String[0]);
   }
   
   @AfterClass
