@@ -22,12 +22,14 @@
   <version>${version}</version>
   <name>Instamo Example</name>
   <url>http://accumulo.apache.org</url>
+
   <properties>
     <accumulo.version>1.5.0-SNAPSHOT</accumulo.version>
     <hadoop-one.version>1.0.4</hadoop-one.version>
     <hadoop-two.version>2.0.2-alpha</hadoop-two.version>
     <maclass>${package}.MapReduceExample</maclass>
   </properties>
+
   <profiles>
     <!-- profile for building against Hadoop 1.0.x
     Activate by not specifying hadoop.profile -->
@@ -70,7 +72,48 @@
         </dependency>
       </dependencies>
     </profile>
+    <profile>
+      <id>shell</id>
+      <build>
+        <plugins>
+          <plugin>
+              <groupId>org.codehaus.mojo</groupId>
+              <artifactId>exec-maven-plugin</artifactId>
+              <version>1.2.1</version>
+              <configuration>
+              <executable>java</executable>
+              <arguments>
+                  <argument>-classpath</argument>
+                  <classpath />
+                  <argument>instamo.example.ShellExample</argument>
+              </arguments>
+              </configuration>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+    <profile>
+      <id>mapreduce</id>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.codehaus.mojo</groupId>
+            <artifactId>exec-maven-plugin</artifactId>
+            <version>1.2.1</version>
+            <configuration>
+              <executable>java</executable>
+              <arguments>
+                <argument>-classpath</argument>
+                <classpath />
+                <argument>${maclass}</argument>
+              </arguments>
+            </configuration>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
   </profiles>
+
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
@@ -89,6 +132,11 @@
       <version>${accumulo.version}</version>
     </dependency>
     <dependency>
+      <groupId>org.apache.accumulo</groupId>
+      <artifactId>accumulo-test</artifactId>
+      <version>${accumulo.version}</version>
+    </dependency>
+    <dependency>
       <groupId>org.apache.zookeeper</groupId>
       <artifactId>zookeeper</artifactId>
       <version>3.3.4</version>
@@ -99,11 +147,12 @@
       <version>2.4</version>
     </dependency>
     <dependency>
-    	<groupId>org.apache.accumulo</groupId>
-    	<artifactId>accumulo-test</artifactId>
-    	<version>${accumulo.version}</version>
+      <groupId>com.google.guava</groupId>
+      <artifactId>guava</artifactId>
+      <version>14.0</version>
     </dependency>
   </dependencies>
+
   <build>
     <plugins>
       <plugin>
@@ -114,19 +163,7 @@
           <target>1.6</target>
         </configuration>
       </plugin>
-      <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>exec-maven-plugin</artifactId>
-        <version>1.2.1</version>
-        <configuration>
-          <executable>java</executable>
-          <arguments>
-            <argument>-classpath</argument>
-            <classpath />
-            <argument>${maclass}</argument>
-          </arguments>
-        </configuration>
-      </plugin>
     </plugins>
   </build>
+
 </project>
