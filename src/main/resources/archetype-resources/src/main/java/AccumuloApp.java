@@ -23,28 +23,29 @@ import java.util.Map.Entry;
 
 import org.apache.accumulo.core.Constants;
 import org.apache.accumulo.core.client.BatchWriter;
-import org.apache.accumulo.core.client.BatchWriterConfig;
 import org.apache.accumulo.core.client.Connector;
 import org.apache.accumulo.core.client.Instance;
 import org.apache.accumulo.core.client.Scanner;
 import org.apache.accumulo.core.client.ZooKeeperInstance;
-import org.apache.accumulo.core.client.security.tokens.AuthenticationToken;
 import org.apache.accumulo.core.data.Key;
 import org.apache.accumulo.core.data.Mutation;
 import org.apache.accumulo.core.data.Value;
 
 public class AccumuloApp {
+  private static final Long MAX_MEMORY = 50 * 1024 * 1024l;
+  private static final Long MAX_LATENCY = 2 * 60 * 1000l;
+  private static final Integer MAX_WRITE_THREADS = 3;
   
-  public static void run(String instanceName, String zookeepers, AuthenticationToken token, String args[]) throws Exception {
+  public static void run(String instanceName, String zookeepers, byte[] password, String args[]) throws Exception {
     // edit this method to play with Accumulo
 
     Instance instance = new ZooKeeperInstance(instanceName, zookeepers);
     
-    Connector conn = instance.getConnector("root", token);
+    Connector conn = instance.getConnector("root", password);
     
     conn.tableOperations().create("foo");
     
-    BatchWriter bw = conn.createBatchWriter("foo", new BatchWriterConfig());
+    BatchWriter bw = conn.createBatchWriter("foo", MAX_MEMORY, MAX_LATENCY, MAX_WRITE_THREADS);
     Mutation m = new Mutation("r1");
     m.put("cf1", "cq1", "v1");
     m.put("cf1", "cq2", "v3");
