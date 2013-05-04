@@ -22,10 +22,9 @@ import java.io.File;
 import java.io.IOException;
 import java.lang.InterruptedException;
 import java.lang.Runnable;
-import java.util.Arrays;
 
 import org.apache.accumulo.core.util.shell.Shell;
-import org.apache.accumulo.test.MiniAccumuloCluster;
+import org.apache.accumulo.server.mini.MiniAccumuloCluster;
 
 public class ShellExample implements Runnable {
   

@@ -22,7 +22,7 @@ package ${package};
 import java.io.File;
 import java.util.UUID;
 
-import org.apache.accumulo.test.MiniAccumuloCluster;
+import org.apache.accumulo.server.mini.MiniAccumuloCluster;
 import org.apache.accumulo.test.continuous.ContinuousIngest;
 import org.apache.accumulo.test.continuous.ContinuousVerify;
 import org.apache.commons.io.FileUtils;
