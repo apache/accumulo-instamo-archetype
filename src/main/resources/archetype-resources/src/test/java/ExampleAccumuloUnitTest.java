@@ -20,7 +20,7 @@
 package ${package};
 
 import org.apache.accumulo.core.client.security.tokens.PasswordToken;
-import org.apache.accumulo.server.mini.MiniAccumuloCluster;
+import org.apache.accumulo.minicluster.MiniAccumuloCluster;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;

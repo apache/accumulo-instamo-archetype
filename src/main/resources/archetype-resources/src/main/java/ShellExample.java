@@ -24,7 +24,7 @@ import java.lang.InterruptedException;
 import java.lang.Runnable;
 
 import org.apache.accumulo.core.util.shell.Shell;
-import org.apache.accumulo.server.mini.MiniAccumuloCluster;
+import org.apache.accumulo.minicluster.MiniAccumuloCluster;
 
 public class ShellExample implements Runnable {
   
