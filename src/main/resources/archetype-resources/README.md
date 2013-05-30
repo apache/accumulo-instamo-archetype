@@ -10,11 +10,12 @@ installation is required.  This is possible if Java and Maven are already
 installed by following the steps below.
 
 ```
-vim src/main/java/${package}/AccumuloApp.java
+vim src/test/java/${package}/ExampleAccumuloUnitTest.java
 mvn package
 ```
 
-After packing the code, you can run one of the below applications.
+The maven package command will run the unit test.  After packing the code, you
+can also run one of the below applications.
 
 Map Reduce
 ----------

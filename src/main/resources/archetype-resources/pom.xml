@@ -87,7 +87,7 @@
               <arguments>
                   <argument>-classpath</argument>
                   <classpath />
-                  <argument>instamo.example.ShellExample</argument>
+                  <argument>${package}.ShellExample</argument>
               </arguments>
               </configuration>
           </plugin>
