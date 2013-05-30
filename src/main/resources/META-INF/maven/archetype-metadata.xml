@@ -24,13 +24,13 @@
       <defaultValue>org.apache.accumulo.instamo</defaultValue>
     </requiredProperty>
     <requiredProperty key="artifactId">
-      <defaultValue>instamo-example</defaultValue>
+      <defaultValue>instamo</defaultValue>
     </requiredProperty>
     <requiredProperty key="version">
       <defaultValue>1.0-SNAPSHOT</defaultValue>
     </requiredProperty>
     <requiredProperty key="package">
-      <defaultValue>instamo.example</defaultValue>
+      <defaultValue>instamo</defaultValue>
     </requiredProperty>
   </requiredProperties>
 
