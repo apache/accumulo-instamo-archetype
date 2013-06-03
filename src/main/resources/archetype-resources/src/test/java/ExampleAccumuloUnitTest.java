@@ -104,7 +104,7 @@ public class ExampleAccumuloUnitTest {
       System.out.println(entry.getKey() + " " + entry.getValue());
     }
    
-    //TODO use scanner to find common enemie ids between Alice and Bob, then
+    //TODO use scanner to find common enemy ids between Alice and Bob, then
     //use BatchScanner to look up their names
  
     conn.tableOperations().delete("foo");
