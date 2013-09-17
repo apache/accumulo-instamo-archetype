@@ -31,6 +31,8 @@ import org.apache.accumulo.core.data.Key;
 import org.apache.accumulo.core.data.Mutation;
 import org.apache.accumulo.core.data.Value;
 import org.apache.accumulo.minicluster.MiniAccumuloCluster;
+import org.apache.accumulo.minicluster.MiniAccumuloConfig;
+import org.apache.log4j.Logger;
 
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
@@ -42,6 +44,7 @@ import org.junit.rules.TemporaryFolder;
  */
 
 public class ExampleAccumuloUnitTest {
+  private static final Logger log = Logger.getLogger(ExampleAccumuloUnitTest.class);
   
   public static TemporaryFolder folder = new TemporaryFolder();
   
@@ -52,7 +55,13 @@ public class ExampleAccumuloUnitTest {
 
     folder.create();
     
-    accumulo = new MiniAccumuloCluster(folder.getRoot(), "superSecret");
+    log.debug("Using " + folder.getRoot());
+    
+    MiniAccumuloConfig config = new MiniAccumuloConfig(folder.getRoot(), "superSecret");
+    config.setNumTservers(1);
+    
+    
+    accumulo = new MiniAccumuloCluster(config);
     
     accumulo.start();
     
@@ -101,7 +110,7 @@ public class ExampleAccumuloUnitTest {
     
     Scanner scanner = conn.createScanner("foo", Constants.NO_AUTHS);
     for (Entry<Key,Value> entry : scanner) {
-      System.out.println(entry.getKey() + " " + entry.getValue());
+      log.debug(entry.getKey() + " " + entry.getValue());
     }
    
     //TODO use scanner to find common enemy ids between Alice and Bob, then

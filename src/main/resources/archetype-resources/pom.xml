@@ -25,8 +25,8 @@
   <url>http://accumulo.apache.org</url>
 
   <properties>
-    <accumulo.version>1.4.4-SNAPSHOT</accumulo.version>
-    <hadoop-one.version>1.0.4</hadoop-one.version>
+    <accumulo.version>1.4.4</accumulo.version>
+    <hadoop-one.version>1.2.1</hadoop-one.version>
     <hadoop-two.version>2.0.2-alpha</hadoop-two.version>
     <maclass>${package}.MapReduceExample</maclass>
   </properties>

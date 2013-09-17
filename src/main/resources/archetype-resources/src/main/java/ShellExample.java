@@ -50,8 +50,10 @@ public class ShellExample implements Runnable {
 
     } catch (InterruptedException e) {
       System.err.println("Error starting MiniAccumuloCluster: " + e.getMessage());
+      System.exit(1);
     } catch (IOException e) {
       System.err.println("Error starting MiniAccumuloCluster: " + e.getMessage());
+      System.exit(1);
     } finally {
       if (null != tempDir) {
         tempDir.delete();
@@ -62,8 +64,10 @@ public class ShellExample implements Runnable {
           mac.stop();
         } catch (InterruptedException e) {
           System.err.println("Error stopping MiniAccumuloCluster: " + e.getMessage());
+          System.exit(1);
         } catch (IOException e) {
           System.err.println("Error stopping MiniAccumuloCluster: " + e.getMessage());
+          System.exit(1);
         }
       }
     }
@@ -74,5 +78,7 @@ public class ShellExample implements Runnable {
 
     ShellExample shell = new ShellExample();
     shell.run();
+    
+    System.exit(0);
   }
 }
