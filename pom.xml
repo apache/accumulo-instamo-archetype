@@ -17,15 +17,21 @@
 -->
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>org.apache</groupId>
+    <artifactId>apache</artifactId>
+    <version>10</version>
+  </parent>
+
   <groupId>org.apache.accumulo</groupId>
   <artifactId>instamo-archetype</artifactId>
-  <version>1.5.1-SNAPSHOT</version>
+  <version>1.5.0-SNAPSHOT</version>
   <packaging>maven-archetype</packaging>
   <name>instamo-archetype</name>
   <scm>
-    <connection>scm:svn:http://svn.apache.org/repos/asf/accumulo/contrib/instamo-archetype/branches/1.5</connection>
-    <developerConnection>scm:svn:https://svn.apache.org/repos/asf/accumulo/contrib/instamo-archetype/branches/1.5</developerConnection>
-    <url>http://svn.apache.org/viewvc/accumulo/contrib/instamo-archetype/branches/1.5</url>
+    <connection>scm:git:git://git.apache.org/accumulo-instamo-archetype.git</connection>
+    <developerConnection>scm:git:https://git-wip-us.apache.org/repos/asf/accumulo-instamo-archetype.git</developerConnection>
+    <url>https://git-wip-us.apache.org/repos/asf?p=accumulo-instamo-archetype.git</url>
   </scm>
   <url>http://accumulo.apache.org</url>
   <build>
