@@ -17,5 +17,5 @@ Then, change to a new directory and run
 
 `mvn archetype:generate -DarchetypeGroupId=org.apache.accumulo -DarchetypeArtifactId=instamo-archetype -DinteractiveMode=false`
 
-Maven will prompt you to enter the rest of the necessary configuration
+and Maven will prompt you to enter the rest of the necessary configuration
 parameters (e.g. groupId, artifactId, version and Java package)
