@@ -27,7 +27,6 @@
   <properties>
     <accumulo.version>1.4.4</accumulo.version>
     <hadoop-one.version>1.2.1</hadoop-one.version>
-    <hadoop-two.version>2.1.0-beta</hadoop-two.version>
     <maclass>${package}.MapReduceExample</maclass>
   </properties>
 
@@ -44,13 +43,6 @@
       <properties>
         <hadoop.version>${hadoop-one.version}</hadoop.version>
       </properties>
-      <dependencies>
-        <dependency>
-          <groupId>org.apache.hadoop</groupId>
-          <artifactId>hadoop-core</artifactId>
-          <version>${hadoop.version}</version>
-        </dependency>
-      </dependencies>
     </profile>
     <profile>
       <id>shell</id>
@@ -118,7 +110,7 @@
     </dependency>
     <dependency>
       <groupId>org.apache.hadoop</groupId>
-      <artifactId>hadoop-client</artifactId>
+      <artifactId>hadoop-core</artifactId>
       <version>${hadoop.version}</version>
     </dependency>
     <dependency>
