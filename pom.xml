@@ -20,20 +20,24 @@
   <parent>
     <groupId>org.apache</groupId>
     <artifactId>apache</artifactId>
-    <version>10</version>
+    <version>13</version>
   </parent>
 
   <groupId>org.apache.accumulo</groupId>
-  <artifactId>instamo-archetype</artifactId>
+  <artifactId>accumulo-instamo-archetype</artifactId>
   <version>1.6.0-SNAPSHOT</version>
   <packaging>maven-archetype</packaging>
-  <name>instamo-archetype</name>
+  <name>Accumulo Instamo Archetype</name>
   <scm>
     <connection>scm:git:git://git.apache.org/accumulo-instamo-archetype.git</connection>
     <developerConnection>scm:git:https://git-wip-us.apache.org/repos/asf/accumulo-instamo-archetype.git</developerConnection>
     <url>https://git-wip-us.apache.org/repos/asf?p=accumulo-instamo-archetype.git</url>
+    <tag>HEAD</tag>
   </scm>
   <url>http://accumulo.apache.org</url>
+  <properties>
+    <sourceReleaseAssemblyDescriptor>source-release-zip-tar</sourceReleaseAssemblyDescriptor>
+  </properties>
   <build>
     <extensions>
       <extension>
@@ -51,16 +55,22 @@
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-source-plugin</artifactId>
-          <version>2.2.1</version>
+          <artifactId>maven-release-plugin</artifactId>
           <configuration>
-            <includePom>true</includePom>
+            <pushChanges>false</pushChanges>
           </configuration>
         </plugin>
         <plugin>
           <groupId>org.apache.rat</groupId>
           <artifactId>apache-rat-plugin</artifactId>
           <version>0.10</version>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-assembly-plugin</artifactId>
+          <configuration>
+            <tarLongFileMode>gnu</tarLongFileMode>
+          </configuration>
         </plugin>
       </plugins>
     </pluginManagement>
@@ -79,25 +89,4 @@
       </plugin>
     </plugins>
   </build>
-  <profiles>
-    <profile>
-      <id>release</id>
-      <build>
-        <plugins>
-          <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-source-plugin</artifactId>
-            <executions>
-              <execution>
-                <id>attach-sources</id>
-                  <goals>
-                    <goal>jar</goal>
-                  </goals>
-              </execution>
-            </executions>
-          </plugin>
-        </plugins>
-      </build>
-    </profile>
-  </profiles>
 </project>
