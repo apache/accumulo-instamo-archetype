@@ -24,10 +24,10 @@
   </parent>
 
   <groupId>org.apache.accumulo</groupId>
-  <artifactId>instamo-archetype</artifactId>
+  <artifactId>accumulo-instamo-archetype</artifactId>
   <version>1.4.4-SNAPSHOT</version>
   <packaging>maven-archetype</packaging>
-  <name>instamo-archetype</name>
+  <name>Accumulo Instamo Archetype</name>
   <scm>
     <connection>scm:git:git://git.apache.org/accumulo-instamo-archetype.git</connection>
     <developerConnection>scm:git:https://git-wip-us.apache.org/repos/asf/accumulo-instamo-archetype.git</developerConnection>
