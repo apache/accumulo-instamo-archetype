@@ -15,7 +15,7 @@
  limitations under the License.
 -->
 
-Instamo Archetype
+Accumulo Instamo Archetype
 =======
 
 About
@@ -27,12 +27,15 @@ Accumulo.
 
 Usage
 -----------
-Checkout this project and run a `mvn install`. This will install the archetype
-to your local repository.
+For released versions, you can simply invoke maven to generate a project for
+you using this archetype:
 
-Then, change to a new directory and run 
+`mvn archetype:generate -DarchetypeGroupId=org.apache.accumulo
+-DarchetypeArtifactId=accumulo-instamo-archetype -DinteractiveMode=false`
 
-`mvn archetype:generate -DarchetypeGroupId=org.apache.accumulo -DarchetypeArtifactId=instamo-archetype -DinteractiveMode=false`
-
-and Maven will prompt you to enter the rest of the necessary configuration
+Maven will prompt you to enter the rest of the necessary configuration
 parameters (e.g. groupId, artifactId, version and Java package)
+
+If you are building a non-released version, checkout this project and run a
+`mvn install`. This will install the archetype to your local repository, after
+which you can follow the previous steps.
