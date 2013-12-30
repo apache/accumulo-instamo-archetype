@@ -67,7 +67,7 @@ public class ExampleAccumuloUnitTest {
     
   }
 
-  @Test(timeout = 30000)
+  @Test(timeout = 60000)
   public void test() throws Exception {
     // edit this method to play with Accumulo
 
