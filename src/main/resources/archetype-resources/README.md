@@ -21,18 +21,21 @@ Instamo
 Introduction
 -----------
 
-Instamo makes it easy to write some code and run it against a local, transient
+Instamo makes it easy to run some simple applications against a local, transient
 [Accumulo](http://accumulo.apache.org) instance in minutes.  No setup or
 installation is required.  This is possible if Java and Maven are already
 installed by following the steps below.
 
+
+Build the code
+--------------
+
 ```
-vim src/test/java/${package}/ExampleAccumuloUnitTest.java
 mvn package
 ```
 
-The maven package command will run the unit test.  After packing the code, you
-can also run one of the below applications.
+The Maven package command will run the unit test.  After packing the code, you
+can also run one of the following applications.
 
 Map Reduce
 ----------
@@ -55,3 +58,17 @@ shell against a local Accumulo instance.
 ```
 mvn exec:exec -P shell
 ```
+
+Writing your own
+----------------
+
+The ExampleAccumuloUnitTest class (src/test/java/ExampleAccumuloUnitTest.java) 
+is a great place to begin writing your first code to run against Accumulo. The
+test currently creates some data about people.
+
+Each row contains information about a person, notably the friends and enemies of
+that person. The test case has a TODO comment for where you can try to find the
+common enemies between Alice and Bob.
+
+This test class is also a great starting point to write and read your own data
+to Accumulo.
