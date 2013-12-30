@@ -31,7 +31,7 @@ For released versions, you can simply invoke maven to generate a project for
 you using this archetype:
 
 `mvn archetype:generate -DarchetypeGroupId=org.apache.accumulo
--DarchetypeArtifactId=accumulo-instamo-archetype -DinteractiveMode=false`
+-DarchetypeArtifactId=accumulo-instamo-archetype-1.4 -DinteractiveMode=false`
 
 Maven will prompt you to enter the rest of the necessary configuration
 parameters (e.g. groupId, artifactId, version and Java package)
