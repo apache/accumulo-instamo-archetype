@@ -20,7 +20,7 @@
   <parent>
     <groupId>org.apache</groupId>
     <artifactId>apache</artifactId>
-    <version>13</version>
+    <version>18</version>
   </parent>
 
   <groupId>org.apache.accumulo</groupId>
@@ -34,16 +34,16 @@
     <url>https://gitbox.apache.org/repos/asf?p=accumulo-instamo-archetype.git</url>
     <tag>HEAD</tag>
   </scm>
-  <url>http://accumulo.apache.org</url>
+  <url>https://accumulo.apache.org</url>
   <properties>
-    <sourceReleaseAssemblyDescriptor>source-release-zip-tar</sourceReleaseAssemblyDescriptor>
+    <sourceReleaseAssemblyDescriptor>source-release-tar</sourceReleaseAssemblyDescriptor>
   </properties>
   <build>
     <extensions>
       <extension>
         <groupId>org.apache.maven.archetype</groupId>
         <artifactId>archetype-packaging</artifactId>
-        <version>2.2</version>
+        <version>3.0.1</version>
       </extension>
     </extensions>
     <pluginManagement>
@@ -51,25 +51,14 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-archetype-plugin</artifactId>
-          <version>2.2</version>
+          <version>3.0.1</version>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-release-plugin</artifactId>
           <configuration>
             <pushChanges>false</pushChanges>
-          </configuration>
-        </plugin>
-        <plugin>
-          <groupId>org.apache.rat</groupId>
-          <artifactId>apache-rat-plugin</artifactId>
-          <version>0.10</version>
-        </plugin>
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-assembly-plugin</artifactId>
-          <configuration>
-            <tarLongFileMode>gnu</tarLongFileMode>
+            <localCheckout>true</localCheckout>
           </configuration>
         </plugin>
       </plugins>
