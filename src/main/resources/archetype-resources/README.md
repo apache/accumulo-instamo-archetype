@@ -15,43 +15,15 @@
  limitations under the License.
 -->
 
-Instamo
-=======
+# Instamo
 
-Introduction
------------
+Instamo is a skeleton project that serves as an example client application for
+[Apache Accumulo](https://accumulo.apache.org) to help you get started.
 
-Instamo makes it easy to write some code and run it against a local, transient
-[Accumulo](http://accumulo.apache.org) instance in minutes.  No setup or
-installation is required.  This is possible if Java and Maven are already
-installed by following the steps below.
+Build the application and run its provided example integration tests by
+executing the following:
 
-```
-vim src/test/java/${package}/ExampleAccumuloUnitTest.java
-mvn package
+```bash
+mvn verify
 ```
 
-The maven package command will run the unit test.  After packing the code, you
-can also run one of the below applications.
-
-Map Reduce
-----------
-
-It's possible to run local map reduce jobs against the MiniAccumuloCluster
-instance.   There is an example of this in the src directory  The following
-command will run the map reduce example.
-
-```
-mvn exec:exec -P mapreduce
-```
-
-Accumulo Shell
------------
-
-The Accumulo shell is a simple application that, among other features, provides
-interactive access to tables in Accumulo. The following command will launch the
-shell against a local Accumulo instance.
-
-```
-mvn exec:exec -P shell
-```
