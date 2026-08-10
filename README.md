@@ -17,6 +17,8 @@
 
 # Instamo Archetype
 
+**NOTE: This project is deprecated. Contact the developer mailing list if there is interest in re-establishing support for an Accumulo Maven archetype**
+
 ## About
 
 This is a Maven Archetype which automates the customization of Instamo, a small
